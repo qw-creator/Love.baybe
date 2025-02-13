@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        h1 {
+            color: #d63384;
+        }
+        p {
+            font-size: 20px;
+            color: #333;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            position: relative;
+        }
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+        .no {
+            background-color: #ff4d4d;
+            color: white;
+            position: absolute;
+        }
+        .heart {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 150px;
+            color: red;
+            opacity: 0;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+        .show-heart {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        .letter {
+            display: none;
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Baybe â¤ï¸</h1>
+        <p>Will you be my Valentine?</p>
+        <button class="btn yes" onclick="showLove()">Yes</button>
+        <button class="btn no" id="noBtn">No</button>
+    </div>
+
+    <div class="heart" id="heart">â¤ï¸</div>
+    <div class="letter" id="letter">
+        <p><strong>Happy Valentineâs Day, my love â¤ï¸</strong></p>
+        <p>Every day with you is special, but today is just another excuse to remind you how much you mean to me.</p>
+        <p>Your energy, your smile, the way you just get meâIâm grateful for all of it.</p>
+        <p>Hope today makes you feel as loved and appreciated as you truly are.</p>
+        <p>Canât wait to make more memories with you. I love you always â¤ï¸ð</p>
+    </div>
+
+    <script>
+        document.getElementById("noBtn").addEventListener("mouseover", function() {
+            let x = Math.random() * (window.innerWidth - this.offsetWidth);
+            let y = Math.random() * (window.innerHeight - this.offsetHeight);
+            this.style.left = x + "px";
+            this.style.top = y + "px";
+        });
+
+        function showLove() {
+            document.getElementById("heart").classList.add("show-heart");
+            setTimeout(() => {
+                document.getElementById("letter").style.display = "block";
+            }, 500);
+        }
+    </script>
+</body>
+</html>
